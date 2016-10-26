@@ -1,0 +1,7 @@
+# ComputerVision Note(2016/10/26) by Fu-En Wang
+
+The equation $\lim_{i \to \infty}{x^i + x + 2}$ is the function.
+
+$$
+\sum_{i=0}^{20}{ \sum_{j=0}^{20}{i+j} }
+$$
