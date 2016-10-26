@@ -1,0 +1,89 @@
+# Automatic Panoramic Image Stitching using Local Features
+## Introduction
+* 1D rotation($ \theta $)  Ordering
+* 2D Rotation($\theta, \phi$) Matching images
+
+<Recognizion Pano>
+## Automatic Stitching
+### Feature Match(SIFT)<br>
+$ \forall NN(j) = argmin_{i}{||x_i - x_j||}, i \neq j $
+
+### Nearest Neighbor search(FLANN)<br />
+ Good for high dimension desciptor like SIFT, the speed is also 
+ fast
+ 
+### 2D Motion/Transformation model (P23)   
+ 
+### Homography for rotation
+ * Projection equation $u = \bar{K}(R|T)\bar{X}$<br>
+ 
+ $$
+ \bar{u_i} = K_i(R_i|0)\bar{X} = K_iR_iX  \\
+ \bar{u_j} = K_j(R_j|0)\bar{X} = K_jR_jX \\
+ \bar{u_i} = H_{ij}\bar{u}_j  \\
+ H_{ij} = K_iR_iR_j^TK_j^{-1}
+ $$
+ 
+### Image Alignment
+### Bundle adjustment
+* Sum of square error(solve non linear square problem)
+* Adjust rotation, focal length of each image to minimize error in match feature.
+### Gain Compensation
+Improve the quality of stitch
+### Multi-band Blending
+Combine two image band(see P42).
+* No blending<br>
+Each is a weighted sum
+$$I^{linear} = \frac{\sum_iI^iW^i}{\sum_iW^i}$$
+
+### Pyramid blending
+
+### Seam Selection
+* (simple) Choose image with max "weight"
+* (better) also minimize error on seams
+<p align="center"><img src="src/1.png" width="90%"></p>
+
+## Conclusion
+* Feature match
+* Multi-image match framework(RANSAC)
+
+
+
+
+
+ 
+ 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---
+The equation $\lim_{i \to \infty}{x^i + x + 2}$ is the function.
+
+$$
+f(x) = a_0 + \sum_{n=1}^{\infty}{  a_n\cos(\frac{n \pi x}{T})  + b_n\sin(\frac{n \pi x} {T})}
+$$
+
+$$
+\begin{bmatrix}
+x_{11} & x_{12} \\
+x_{21} & x_{22}
+\end{bmatrix}
+\times
+\begin{bmatrix}
+y_{11} & y_{12} \\
+y_{21} & y_{22}
+\end{bmatrix}
+=\sum
+$$
+!--->

@@ -3,5 +3,18 @@
 The equation $\lim_{i \to \infty}{x^i + x + 2}$ is the function.
 
 $$
-\sum_{i=0}^{20}{ \sum_{j=0}^{20}{i+j} }
+f(x) = a_0 + \sum_{n=1}^{\infty}{  a_n\cos(\frac{n \pi x}{T})  + b_n\sin(\frac{n \pi x} {T})}
+$$
+
+$$
+\begin{bmatrix}
+x_{11} & x_{12} \\
+x_{21} & x_{22}
+\end{bmatrix}
+\times
+\begin{bmatrix}
+y_{11} & y_{12} \\
+y_{21} & y_{22}
+\end{bmatrix}
+=\sum
 $$
